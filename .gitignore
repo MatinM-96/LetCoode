@@ -1,0 +1,51 @@
+# Ignore the build directory
+bin/
+obj/
+
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore the settings that are specific to the Visual Studio IDE
+.vs/
+*.user
+*.suo
+*.userprefs
+
+# Ignore the ReSharper directory if you use ReSharper
+_ReSharper*/
+
+# Ignore project files that can be generated from other files
+*.csproj.user
+*.csproj.*.user
+*.csproj.*.targets
+
+# NuGet Packages Directory
+packages/
+
+# The nuget config file, but do not ignore the packages.config
+!**/packages.config
+
+# Ignore the cache files for the project
+*.nuget.cache
+
+# Ignore the nupkg directory
+*.nupkg
+
+# MSTest test Results
+[TestResults]
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
+# Build Results of an MSBuild Project
+**/[Bb]in/
+**/[Oo]bj/
+**/[Ll]og/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
