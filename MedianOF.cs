@@ -75,24 +75,29 @@ namespace lettCode
         }
 
 
+        
 
 
-
-        public List<int> AddToList(int[]array)
+        void AddToList(int[]array, List<int> merge)
         {
-            List<int> list = new List<int>();
 
             if(!ISempty(array))
                 for(int i = 0; i<array.Length; i++)
-                { list.Add(array[i]);}
-            return list; 
-            
-
+                { merge.Add(array[i]);}
+             
+       
         }
 
 
+       //in  c++ we use the refrence to pass the list or array for manipulating
 
 
+
+        public List <int> sort(int[] array)
+        {
+            List<int> list2 = new List<int>();
+            return list2; 
+        }
 
 
 
@@ -104,7 +109,18 @@ namespace lettCode
 
 
 
-            List<int> list =  AddToList(array2);
+            List<int> list = new List<int> ();
+
+            AddToList(array2, list);
+            AddToList(array1, list);
+
+
+
+
+
+
+
+            //need some research about log(n+m)
 
 
             foreach (int item in list)
