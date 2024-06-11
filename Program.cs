@@ -1,5 +1,6 @@
 ﻿
 using lettCode;
+using System.Xml.Linq;
 
 public class Program
 {
@@ -16,9 +17,10 @@ public class Program
        int num =  appendCharacters.appendCharacter("mat", "matin");
 
 
-        Console.WriteLine(num); 
-
 
 
     }
+
+
+
 }
