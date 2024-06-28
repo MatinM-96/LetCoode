@@ -17,23 +17,23 @@ namespace lettCode
       public void addTwoNumbersTest()
         {
 
-            ListNode head1 = new ListNode(0);
+            Node head1 = new Node(0);
 
 
-            ListNode num1 = head1;
+            Node num1 = head1;
             num1.value = 2;
-            num1.next = new ListNode(4);
+            num1.next = new Node(4);
             num1 = num1.next;
-            num1.next = new ListNode(3);
+            num1.next = new Node(3);
 
 
             //declre the second list
 
 
-            ListNode head2 = new ListNode(0);
+            Node head2 = new Node(0);
 
 
-            ListNode secondNode = head2;
+            Node secondNode = head2;
             secondNode.value = 5;
             //secondNode.next = new ListNode(6);
             //secondNode = secondNode.next;
@@ -42,17 +42,19 @@ namespace lettCode
             AddTwoNumbers caluclateSumOfNumbers = new AddTwoNumbers();
 
 
-            ListNode removingtheFirstNode = caluclateSumOfNumbers.Result(head1, head2);
+            Node removingtheFirstNode = caluclateSumOfNumbers.Result(head1, head2);
 
            printListElements(removingtheFirstNode);
         }
       
-        public void printListElements(ListNode result)
+
+
+        //this function is responsilbe for two print elements from the list 
+        public void printListElements(Node result)
         {
             //using helper to dont lose the original data
              
-            ListNode helper = result; 
-
+            Node helper = result; 
             //ListNode current = result; 
             while (helper != null)
             {
@@ -62,8 +64,6 @@ namespace lettCode
                 helper = helper.next;
             }
         }
-
-
     }
 
 }

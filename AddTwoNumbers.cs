@@ -13,12 +13,12 @@ namespace lettCode
 
 
     //create node to holde the value and the address of the next node
-    public class ListNode
+    public class Node
     {
         public int value;
-        public ListNode next;
+        public Node next;
 
-        public ListNode(int value, ListNode next = null)
+        public Node(int value, Node next = null)
         {
 
             this.value = value;
@@ -30,10 +30,10 @@ namespace lettCode
     public class AddTwoNumbers
     {
 
-        public ListNode addTowNumberssFunction(ListNode listOne, ListNode listTwo) 
+        public Node addTowNumberssFunction(Node listOne, Node listTwo) 
         {
-            ListNode head  = new ListNode(0);
-            ListNode result = head;
+            Node head  = new Node(0);
+            Node result = head;
 
 
 
@@ -56,7 +56,7 @@ namespace lettCode
                 // append the result into a list
                 // before that we calcutale the reminder of the resultnumber by %
                 
-                result.next = new ListNode(sum%10);  
+                result.next = new Node(sum%10);  
               
                 //moving to the next node 
                 
@@ -76,7 +76,7 @@ namespace lettCode
                 curray = sum / 10;
 
 
-                result.next = new ListNode (sum%10);
+                result.next = new Node (sum%10);
                 result = result.next;
                 listTwo = listTwo.next; 
             }
@@ -88,7 +88,7 @@ namespace lettCode
                 curray = sum / 10;
 
 
-                result.next = new ListNode(sum % 10);
+                result.next = new Node(sum % 10);
                 result = result.next;
                 listOne = listOne.next;
             }
@@ -99,7 +99,7 @@ namespace lettCode
             // last senario where both list-one and list-two is empty, and the carry is greater than 0 
             if(curray > 0)
             {
-                result.next = new ListNode(curray);
+                result.next = new Node(curray);
             }
 
             return head; 
@@ -107,11 +107,11 @@ namespace lettCode
 
 
         // this function is responsilbe to remove the first initate value into the Node.
-        public ListNode Result(ListNode node1, ListNode node2)
+        public Node Result(Node node1, Node node2)
         {
 
            
-            ListNode result = addTowNumberssFunction(node1, node2);
+            Node result = addTowNumberssFunction(node1, node2);
             
             if(result == null)
             {
