@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -9,75 +10,120 @@ namespace lettCode
 {
 
 
-      public class ListNode {
-          public int val;
-         public ListNode next;
-          public ListNode(int val=0, ListNode next=null) {
-              this.val = val;
-              this.next = next;
-          }
-      }
-     
-    public class AddTwoNumbers
+
+
+    //create node to holde the value and the address of the next node
+    public class ListNode
     {
-        public ListNode AddTwoNumberss(ListNode l1, ListNode l2)
+        public int value;
+        public ListNode next;
+
+        public ListNode(int value, ListNode next = null)
         {
 
+            this.value = value;
+            this.next = next;
 
-            ListNode head = null;
-            ListNode result = new ListNode(0);
-            head = result;
+        }
+    }
+
+    public class AddTwoNumbers
+    {
+
+        public ListNode addTowNumberssFunction(ListNode listOne, ListNode listTwo) 
+        {
+            ListNode head  = new ListNode(0);
+            ListNode result = head;
+
+
+
+            
 
             int curray = 0;
 
+           
 
 
-            while (l1 != null && l2 != null)
+            //the first senario where both list one and list two is equal
+            while (listOne != null && listTwo != null)
             {
-                int resultValue = l1.val + l2.val + curray;
-                curray = resultValue / 10;
+                // caculate the sum of two numbers
+                int sum = listOne.value+listTwo.value+curray;
+
+                curray = sum /10; //calculate the reminder 
 
 
-                result.val = resultValue % 10;
-
+                // append the result into a list
+                // before that we calcutale the reminder of the resultnumber by %
+                
+                result.next = new ListNode(sum%10);  
+              
+                //moving to the next node 
+                
+                listOne = listOne.next; 
+                listTwo = listTwo.next;
                 result = result.next;
-                l1 = l1.next;
-                l2 = l2.next;
+
+            }
+
+
+            //second senario where the list one is null 
+
+
+            while (listTwo != null)
+            {
+                int sum = listTwo.value + curray;
+                curray = sum / 10;
+
+
+                result.next = new ListNode (sum%10);
+                result = result.next;
+                listTwo = listTwo.next; 
+            }
+            //if the list-two is empty
+
+            while (listOne != null)
+            {
+                int sum = listOne.value + curray;
+                curray = sum / 10;
+
+
+                result.next = new ListNode(sum % 10);
+                result = result.next;
+                listOne = listOne.next;
             }
 
 
 
-            while (l1 != null)
+
+            // last senario where both list-one and list-two is empty, and the carry is greater than 0 
+            if(curray > 0)
             {
-                int resultValue = l1.val + curray;
-                curray = resultValue / 10;
-
-
-                result.val = resultValue % 10;
-
-                result = result.next;
-                l1 = l1.next;
+                result.next = new ListNode(curray);
             }
 
-
-
-
-            while (l2 != null)
-            {
-                int resultValue = l2.val + curray;
-                curray = resultValue / 10;
-
-
-                result.val = resultValue % 10;
-
-                result = result.next;
-                l2 = l2.next;
-            }
-
-
-
-            return head.next;
-
+            return head; 
         }
+
+
+        // this function is responsilbe to remove the first initate value into the Node.
+        public ListNode Result(ListNode node1, ListNode node2)
+        {
+
+           
+            ListNode result = addTowNumberssFunction(node1, node2);
+            
+            if(result == null)
+            {
+                return result;
+            }
+            else
+            {
+                result = result.next;
+                return result;
+            }           
+    
+        }
+
     }
 }
