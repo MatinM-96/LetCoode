@@ -18,7 +18,7 @@ namespace lettCode
 
             int tLength = t.Length;
             int sLength = s.Length;
-
+            
 
             while (sLength != 0 && tLength != 0) 
             { 

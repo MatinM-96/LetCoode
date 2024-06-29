@@ -64,6 +64,35 @@ namespace lettCode
                 helper = helper.next;
             }
         }
+
+
+        public void MedianOfTwoSortedArray()
+        {
+            int[] arrayOne = new int[3]; 
+            arrayOne[0] = 1;
+            arrayOne[1] = 2;
+            arrayOne[2] = 3;
+
+
+            int[] arrayTwo = new int[3];
+            arrayTwo[0] = 3;
+            arrayTwo[1] = 4;
+            arrayTwo[2] = 5;
+
+            MedianOFTwoArray medianTest = new MedianOFTwoArray();
+            int[] resultArray = new int[arrayOne.Length + arrayTwo.Length];
+            resultArray = medianTest.myMergedArray(arrayOne, arrayTwo);
+
+
+            for (int i = 0; i < resultArray.Length; i++)
+            {
+                Console.WriteLine(resultArray[i]);
+            }
+
+
+
+
+        }
     }
 
 }

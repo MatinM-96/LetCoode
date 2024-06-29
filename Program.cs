@@ -10,7 +10,8 @@ public class Program
     {
 
         testFunctions twoNumbers  = new testFunctions();
-        twoNumbers.addTwoNumbersTest();
+        //twoNumbers.addTwoNumbersTest();
+        twoNumbers.MedianOfTwoSortedArray(); 
     }
 
 

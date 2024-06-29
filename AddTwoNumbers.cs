@@ -63,9 +63,9 @@ namespace lettCode
                 listOne = listOne.next; 
                 listTwo = listTwo.next;
                 result = result.next;
-
+               
             }
-
+            
 
             //second senario where the list one is null 
 
@@ -73,6 +73,7 @@ namespace lettCode
             while (listTwo != null)
             {
                 int sum = listTwo.value + curray;
+                
                 curray = sum / 10;
 
 
