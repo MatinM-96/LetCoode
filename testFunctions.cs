@@ -77,20 +77,32 @@ namespace lettCode
             int[] arrayTwo = new int[3];
             arrayTwo[0] = 3;
             arrayTwo[1] = 4;
-            arrayTwo[2] = 5;
+            arrayTwo[2] = 1;
 
-            MedianOFTwoArray medianTest = new MedianOFTwoArray();
+            MedianOfTwoArray medianTest = new MedianOfTwoArray();
             int[] resultArray = new int[arrayOne.Length + arrayTwo.Length];
-            resultArray = medianTest.myMergedArray(arrayOne, arrayTwo);
-
+            
+            
+            resultArray = medianTest.MergTwoArrays(arrayOne, arrayTwo);
+            medianTest.DivideArray(resultArray, 0, resultArray.Length - 1);
+            
+            double median = medianTest.MedianOfArray(resultArray);
 
             for (int i = 0; i < resultArray.Length; i++)
             {
                 Console.WriteLine(resultArray[i]);
             }
 
-
-
+            if (median == -1)
+            {
+                Console.WriteLine("array is empty.");
+            }
+            else
+            {
+                Console.Write($"The median is:{median}");
+            }
+            
+            
 
         }
     }
